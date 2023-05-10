@@ -40,7 +40,9 @@ The setup of part of this matrix is done as self-evident in windows forms applic
 $$\text{Permutations of a component} = \prod_{i=1}^{n}\left(p_{i,s} + 1\right)$$
 
 where,
+
     $n$ = the number of geometry affecting parameters
+
     $p_{i,s}$ = the number of uniform discretized steps that the parameter $p_i$ can take inside its interval
 
 The PCM is derived from what I call a GAPASM (Geometry-Affecting Parameter Associative Structure Matrix), which is a matrix that intends to show which parameters affect the geometry of what components. An example of this is shown in the following figure:
