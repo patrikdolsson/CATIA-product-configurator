@@ -31,7 +31,7 @@ The resulting product in CATIA should look something like the following when con
 
 The configurator uses abstracted [power copies](http://catiadoc.free.fr/online/pktug_C2/pktugat0053.htm) to instantiate parts in desired context. The entire product is defined in code by fully defining the instantiation of all the parts in terms of the configuration parameters. All context references are hard coded as defined by the power copies. 
 
-The parameters that affect the geometry of components of the product will need to be discretized when exporting the STL models for use in the [webgl implementation](https://github.com/patrikdolsson/webgl-product-configurator). This discretization of parameters and determining of STL models that are exported using the export STL button is done by using what I call a PCM (Permutation Calculation Matrix) as shown in the following figure:
+The parameters that affect the geometry of components of the product will need to be discretized when exporting the STL models for use in the [webgl implementation](https://github.com/patrikdolsson/webgl-product-configurator). This discretization of parameters and determining of STL models that are exported using the export STL button is done by using what I call a PPCM (Part Permutation Calculation Matrix) as shown in the following figure:
 
 ![Permutation Calculation Matrix](readme-images/PCM.png)
 
@@ -44,7 +44,7 @@ where,
 -   $n$ = the number of geometry affecting parameters
 -   $p_{i,s}$ = the number of uniform discretized steps that the parameter $p_i$ can take inside its interval
 
-The PCM is derived from what I call a GAPASM (Geometry-Affecting Parameter Associative Structure Matrix), which is a matrix that intends to show which parameters affect the geometry of what components. An example of this is shown in the following figure:
+The PPCM is derived from what I call a GAPASM (Geometry-Affecting Parameter Associative Structure Matrix), which is a matrix that intends to show which parameters affect the geometry of what components. An example of this is shown in the following figure:
 
 ![Geometry-Affecting Parameter Associative Structure Matrix](readme-images/GAPASM.png)
 
