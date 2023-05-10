@@ -155,7 +155,7 @@ Public Class Form1
         Dim product = productDocument.Product
         Dim products = product.Products
 
-        CATIAFunctions.ClearPreviousInstantiations(CATIA, documents, products, objectsToSelect)
+        CATIAFunctions.ClearPreviousInstantiations(CATIA, documents, products, objectsToSelect, tempFilesLocation)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

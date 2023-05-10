@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <fileLocation>
-	<CAD>C:\path\to\CAD\files\</CAD>
+	<!-- Trailing backslash (\) is important for correct formatting of paths in other places in this project -->
+	<CAD>C:\path\to\CAD\files\</CAD> <!-- for the example product configurator. This is wherever you put the files from catia-files.zip -->
 	<STL>C:\desired\save\path\for\STL\models\</STL>
 	<temp>C:\temp\path\for\saving\of\CATIA\files\</temp>
 </fileLocation>

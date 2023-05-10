@@ -236,7 +236,7 @@ H1:
         objectsToSelect.Clear()
     End Sub
 
-    Public Sub ClearPreviousInstantiations(CATIA, documents, products, objectsToSelect)
+    Public Sub ClearPreviousInstantiations(CATIA, documents, products, objectsToSelect, tempFilesLocation)
         Try
             For i = 2 To products.Count
                 Dim partToDelete = products.Item(2)
@@ -244,8 +244,13 @@ H1:
             Next
         Catch ex As Exception
         End Try
+        SaveProduct(CATIA, tempFilesLocation)
     End Sub
+
     Public Sub SaveProduct(CATIA, tempFilesLocation)
+        If Not Directory.Exists(tempFilesLocation) Then
+            Directory.CreateDirectory(tempFilesLocation)
+        End If
         CATIA.DisplayFileAlerts = False
         CATIA.ActiveDocument.SaveAs(tempFilesLocation & "TableLamp.CATProduct")
         CATIA.DisplayFileAlerts = True
