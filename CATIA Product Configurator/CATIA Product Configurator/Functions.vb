@@ -2,7 +2,7 @@
     Friend Function getFileLocation(directoryType) As String
         'Dim projectPath As String = CurDir() + ".\..\.."
         'Dim projectPath As String = AppDomain.CurrentDomain.BaseDirectory + ".\..\..\"
-        Dim projectPath As String = My.Application.Info.DirectoryPath + ".\..\..\"
+        Dim projectPath As String = My.Application.Info.DirectoryPath + "\..\..\"
         Dim fileLocationFile As String = "FileLocation.XML"
         Dim doc As XDocument = XDocument.Load(projectPath + fileLocationFile)
         If directoryType = "CAD" Then

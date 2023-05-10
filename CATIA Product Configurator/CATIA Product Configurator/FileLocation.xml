@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <fileLocation>
-	<CAD>C:\Users\patol451\OneDrive - Linköpings universitet\Nuvarande kurser\Exjobb\LampCATIA\</CAD>
-	<STL>C:\Users\patol451\OneDrive - Linköpings universitet\Nuvarande kurser\Exjobb\STL\</STL>
-	<temp>C:\Users\patol451\OneDrive - Linköpings universitet\Nuvarande kurser\Exjobb\temp\</temp>
-	
+	<CAD>C:\path\to\CAD\files\</CAD>
+	<STL>C:\desired\save\path\for\STL\models\</STL>
+	<temp>C:\temp\path\for\saving\of\CATIA\files\</temp>
 </fileLocation>
