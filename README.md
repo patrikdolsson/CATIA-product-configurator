@@ -83,7 +83,7 @@ Study Button1's and Button2's event handler functions in Form1.vb and implement 
 
 ### Step 3
 
-Open ConfigureFunctions.vb and change the GetAcceptableTypes to fit your product. Review the functions: Configure, ModifyAngles, ModifyReferenceParameters and determine if you need the same or similar setup of functions and implement it to fit your implementation.
+Open ConfigureFunctions.vb and change the GetAcceptableTypes to fit your product. Review the functions: Configure, ModifyAngles, ModifyReferenceParameters and determine if you need the same or similar setup of functions and modify it to fit your implementation.
 
 Then review and change the ConfigureParts function to fit your implementation.
 
@@ -95,7 +95,7 @@ Open ExportSTL.vb and review the function GetPartsToExport and change necessary 
 
 ### Step 5
 
-Study Button3's event handler function in Form1.vb and change it to fit your implementation
+Study Button3's event handler function in Form1.vb and modify it to fit your implementation
 
 ### Step 6
 
