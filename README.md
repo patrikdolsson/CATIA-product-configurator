@@ -19,17 +19,27 @@ How to run the example:
 
 ## Preview
 
+The windows forms app should look like the following:
 
+![Product configurator](readme-images/product-configurator.png)
+
+The resulting product in CATIA should look something like the following when configured:
+
+![CAD model](readme-images/CAD%20model.png)
 
 ## How does it work?
 
 The configurator uses abstracted [power copies](http://catiadoc.free.fr/online/pktug_C2/pktugat0053.htm) to instantiate parts in desired context. The entire product is defined in code by fully defining the instantiation of all the parts in terms of the configuration parameters. All context references are hard coded as defined by the power copies. 
 
-The STL models that are exported using the export STL button are determined using what I call a Permutation Calculation Matrix as shown in the following figure. The setup of this matrix is done as self-evident in windows forms application as shown in the preview.
+The STL models that are exported using the export STL button are determined using what I call a Permutation Calculation Matrix as shown in the following figure. 
 
 ![Permutation Calculation Matrix](readme-images/PCM.png)
 
+The numbers of configurations are calculated using the following formula:
 
+$$\text{Permutations of a sub-component} = \prod_{i=1}^{n}p_{i,n} = \prod_{i=1}^{n}\left(p_{i,s} + 1\right)$$
+
+The setup of this matrix is done as self-evident in windows forms application as shown in the preview.
 
 <!--Geometry Affecting Parameter Associative Structure Matrix as shown in the following figure
 
