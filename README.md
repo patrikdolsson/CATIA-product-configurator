@@ -6,6 +6,8 @@ This is an example repo for how to implement a product configurator and STL expo
 
 A [startup guide](#getting-started), a [preview](#preview), an [explanation of how the product configurator works](#how-does-it-work) and a [brief step by step guide to implement your own product configurator](#how-to-implement-your-own-product-configurator) will follow.
 
+Keep in mind that the example is purely for illustrative purposes of the functionality of this approach. Realism of the product is not the aim of this repo.
+
 ## Getting started
 
 How to run the example:
@@ -61,9 +63,40 @@ The current implementation is quite narrow in the product structure that is comp
 -   If a component has alternative power copy versions. Switches between the versions may not induce the switch of other components' power copy versions.
 -   If higher levels of modularization is desired, nested use of power copies may be implemented in order to create power copies of different types that represent higher levels of sub-components.
 
-On top of this, dynamic number of instantiations of power copies based on configuration parameters is not handled in a general way by this repo. It is not difficult to get the CATIA product to behave as intended. The problem arises when trying to figure out the PPCM and export the STL models in an intended way to get the [webgl implementation](https://github.com/patrikdolsson/webgl-product-configurator) to work as intended. Substantial changes to this repo and the webgl implementation may be needed to get it to work as intended.
+On top of this, dynamic number of instantiations of power copies based on configuration parameters is not handled in a general way by this repo. It is not difficult to get the CATIA product to behave as intended. The problem arises when trying to figure out the PPCM and export the STL models in an intended way to get the [webgl implementation](https://github.com/patrikdolsson/webgl-product-configurator) to work as intended. This is especially true when separate instances of power copies should receive their own set of equivalent parameters. Substantial changes to this repo and the webgl implementation may be needed to get it to work as intended.
 
-Given that the product your trying to implement is compatible with this repo, the following step by step guide should be enough to help you implement your own product configurator that exports STL models for a webgl implementation using this repo.
+Given that the product you're trying to implement is compatible with this repo, the following step by step guide should be enough to help you implement your own product configurator that exports STL models for a webgl implementation using this repo.
 
 ### Step 1
 
+Add "Placement Points" and "Output Points" to all of your power copies you intend to use. The placement points should represent points on the part geometry that you can place in relation to a global coordinate in the webgl implementation. The output points should represent points on the part geometry that you intend to use to calculate global coordinates for use when placing another component to the product. In essence, placement points are placed on other component's outpoints.
+
+Placement points should be placed inside a geometrical set named "Placement" and output points should be placed inside a geometrical set named "Output" as done in the following image:
+
+![placementoutputpoints](readme-images/placementoutputpoints.png)
+
+### Step 2
+
+Determine all of your configuration parameters and change the Form1 display to fit your configurator. 
+
+Study Button1's and Button2's event handler functions in Form1.vb and implement your versions to fit your implementation
+
+### Step 3
+
+Open ConfigureFunctions.vb and change the GetAcceptableTypes to fit your product. Review the functions: Configure, ModifyAngles, ModifyReferenceParameters and determine if you need the same or similar setup of functions and implement it to fit your implementation.
+
+Then review and change the ConfigureParts function to fit your implementation.
+
+Then review the InstantiateLampBase functions with its comments to understand how each power copy is instantiated and how references are applied. Then implement it to fit all of your parts.
+
+### Step 4
+
+Open ExportSTL.vb and review the function GetPartsToExport and change necessary parts to fit your implementation.
+
+### Step 5
+
+Study Button3's event handler function in Form1.vb and change it to fit your implementation
+
+### Step 6
+
+You should now be able to run the "Export STL" button and use the resulting STL folder in a [webgl implementation](https://github.com/patrikdolsson/webgl-product-configurator).

@@ -235,6 +235,8 @@ Public Class Form1
         Dim lampHeadLength_Steps = NumericUpDown81.Value
 
         ' Define arrays for each configuration setting
+        ' For Geometry-Affecting Parameters: the order is {min, max, steps}
+        ' For continuous non geometry affecting: the order is {default, min, max, stepSize}
         Dim baseWidthArray = {baseWidth_Min, baseWidth_Max, baseWidth_Steps}
         Dim baseDepthArray = {baseDepth_Min, baseDepth_Max, baseDepth_Steps}
         Dim baseHeightArray = {baseHeight_Min, baseHeight_Max, baseHeight_Steps}
