@@ -4,7 +4,7 @@ Welcome to the CATIA Product Configurator repo! This CATIA product configurator 
 
 This is an example repo for how to implement a product configurator and STL exporter in CATIA. The STLs produced by this repo is intended to be utilized in the implementation of a product configurator in WebGL according to the [webgl-product-configurator repo](https://github.com/patrikdolsson/webgl-product-configurator). This repo can be used as a template to implement your own product configurator and STL exporter for any other customizable product. The product configurator is created using a windows forms application in Visual Studio connected to the [CATIA API](https://catiadesign.org/_doc/V5Automation/) using COM-referenences. 
 
-A [startup guide](#getting-started), an [explanation of how the product configurator works](#how-does-it-work) and a [brief step by step guide to implement your own product configurator](#how-to-implement-your-own-product-configurator) will follow.
+A [startup guide](#getting-started), a [preview](#preview), an [explanation of how the product configurator works](#how-does-it-work) and a [brief step by step guide to implement your own product configurator](#how-to-implement-your-own-product-configurator) will follow.
 
 ## Getting started
 
@@ -13,11 +13,34 @@ How to run the example:
 -   Download/clone this repo to a folder on your machine, or import this repo to your own repo and clone that repo
 -   Unzip the CATIA files and place it somewhere on your local machine
 -   Open the project solution in Visual Studio
--   Open FileLocation.xml and replace the paths to corresponding desired locations on your local machine
+-   Open FileLocation.xml and replace the paths to corresponding desired locations on your local machine (Note: The STL and temp paths do not have to exist)
 -   Open TableLamp.CATProduct in CATIA and make sure you are in the assembly design workbench.
 -   Run the solution and test the product configurator
 
+## Preview
+
+
+
 ## How does it work?
+
+The configurator uses abstracted [power copies](http://catiadoc.free.fr/online/pktug_C2/pktugat0053.htm) to instantiate parts in desired context. The entire product is defined in code by fully defining the instantiation of all the parts in terms of the configuration parameters. All context references are hard coded as defined by the power copies. 
+
+The STL models that are exported using the export STL button are determined using what I call a Permutation Calculation Matrix as shown in the following figure. The setup of this matrix is done as self-evident in windows forms application as shown in the preview.
+
+![Permutation Calculation Matrix](readme-images/PCM.png)
+
+
+
+<!--Geometry Affecting Parameter Associative Structure Matrix as shown in the following figure
+
+![Geometry Affecting Parameter Associative Structure Matrix](readme-images/GAPASM.png)
+
+
+The current implementation does not support an arbitrary amount of instantiations of a certain power copy out of the box-->
+
+
+
 
 
 ## How to implement your own product configurator
+

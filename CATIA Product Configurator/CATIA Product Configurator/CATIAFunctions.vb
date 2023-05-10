@@ -1,5 +1,6 @@
 ﻿'Imports System.Linq
 'Imports System.Xml.Linq
+Imports System.IO
 Imports INFITF
 Imports KnowledgewareTypeLib
 Imports MECMOD
