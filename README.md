@@ -54,4 +54,16 @@ Furthermore, the configuration of the GUI control in the [webgl implementation](
 
 ## How to implement your own product configurator
 
-<!--The current implementation does not support an arbitrary amount of instantiations of a certain power copy out of the box-->
+The current implementation is quite narrow in the product structure that is compatible with it. The product structure that will work with this implementation is defined as the following:
+
+-   The product structure is completely flat. Meaning that the product will consist of a list of instantiated power copies as their own parts.
+-   Each instantiated power copy may have alternative versions (or types) that can be replaced in the same or different context. However, one power copy may only replace one other power copy. One power copy may not be replaced by two or more other power copies; and one power copy may not replace two or more other power copies.
+-   If a component has alternative power copy versions. Switches between the versions may not induce the switch of other components' power copy versions.
+-   If higher levels of modularization is desired, nested use of power copies may be implemented in order to create power copies of different types that represent higher levels of sub-components.
+
+On top of this, dynamic number of instantiations of power copies based on configuration parameters is not handled in a general way by this repo. It is not difficult to get the CATIA product to behave as intended. The problem arises when trying to figure out the PPCM and export the STL models in an intended way to get the [webgl implementation](https://github.com/patrikdolsson/webgl-product-configurator) to work as intended. Substantial changes to this repo and the webgl implementation may be needed to get it to work as intended.
+
+Given that the product your trying to implement is compatible with this repo, the following step by step guide should be enough to help you implement your own product configurator that exports STL models for a webgl implementation using this repo.
+
+### Step 1
+
